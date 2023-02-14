@@ -2,9 +2,16 @@
 #include <vector>
 using namespace std;
 
-class DrawTree1 {
+class DrawTree {
 public:
     virtual void CoutTree() {
+      
+    }
+};
+
+class DrawTree1 : public DrawTree {
+public:
+    void CoutTree() {
         cout << "Picture 1:\n";
 
         cout << " /  \\\n";
@@ -14,7 +21,7 @@ public:
     }
 };
 
-class DrawTree2 : public DrawTree1 {
+class DrawTree2 : public DrawTree {
 public:
     void CoutTree() {
         cout << "Picture 2:\n";
@@ -26,7 +33,7 @@ public:
     }
 };
 
-class DrawTree3 : public DrawTree1 {
+class DrawTree3 : public DrawTree {
 public:
     void CoutTree() {
         cout << "Picture 3:\n";
@@ -39,7 +46,7 @@ public:
 };
 
 int main() {
-    vector<DrawTree1*> Arr;
+    vector<DrawTree*> Arr;
 
     DrawTree1 *tree1 = new DrawTree1;
     Arr.push_back(tree1);
